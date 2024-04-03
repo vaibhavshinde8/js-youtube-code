@@ -8,7 +8,7 @@ function calculateCartprice(num1){
 }
 console.log(calculateCartprice(100));
 
-
+ 
 function calculateCartprice2(...num1){ ///rest ... operater or sprade operater
     return num1;
 }
@@ -32,3 +32,35 @@ function handleObject(anyObject){  //in this way we access properties of object 
     console.log(`name is ${anyObject.name} and age is ${anyObject.age}`);
 }
 handleObject(user);
+
+
+//function scope
+
+function one(){
+    const userName="hitesh"
+
+    function two(){
+        const webside="youtube"
+        //console.log(userName);
+    }
+    //console.log(webside);  ///child access parents characterstics but pareent cannot
+                            //cannot access child characterstics
+    two();
+}
+one();
+
+
+addOne(5); ///this function call allows in js for following type of function
+
+function addOne(val){
+    return val+1;
+}
+
+addOne1(5);//this function call not allows in js for following type of function
+            //beacause they cannot be called before they are declared.
+ 
+const addOne1=function(val){
+    return val+1;
+}
+addOne1(5);//this is allows in js
+
